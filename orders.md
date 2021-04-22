@@ -20,7 +20,7 @@ The Fy! Marketplace API for Orders allows developers to programmatically retriev
 <a name="paths"></a>
 ## Paths
 
-### `GET` /orders
+### `GET` /v0/orders
 <a name="getorders"></a>
 
 Returns orders created between the specified `from` and `to` parameters.
@@ -29,7 +29,7 @@ Returns orders created between the specified `from` and `to` parameters.
 |-|-|
 |Operation|`getOrders`|
 |Method|`GET`|
-|Endpoint|`/orders`|
+|Endpoint|`/v0/orders`|
 <br>
 
 #### Parameters
@@ -64,7 +64,7 @@ An example of a successful response from the [getOrders](#getorders) operation:
 		},
 		"orderLines": [{
 			"id": 1234,
-			"sku": "SKU-ABC-9000",
+			"sku": "SKU-A",
 			"quantity": 1,
 		}],
 		"createdAt": "2021-01-01T00:00:00Z"
