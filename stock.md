@@ -20,7 +20,7 @@ The Fy! Marketplace API for Stock allows developers to programmatically create s
 ## Paths
 <a name="paths"></a>
 
-### `POST` /stock
+### `POST` /v0/inventory
 <a name="updatestock"></a>
 
 Updates one or more stock items.
@@ -29,7 +29,7 @@ Updates one or more stock items.
 |-|-|
 |Operation|`updateStock`|
 |Method|`POST`|
-|Endpoint|`/stock`|
+|Endpoint|`/v0/inventory`|
 <br>
 #### Parameters
 
@@ -43,10 +43,10 @@ For example:
 ```json
 {
 	"data": [{
-		"sku": "SKU-ABC-9000",
+		"sku": "SKU-A",
 		"availableStock": 100
 	}, {
-		"sku": "SKU-XYZ-4200",
+		"sku": "SKU-B",
 		"availableStock": 25
 	}]
 }

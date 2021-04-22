@@ -16,6 +16,6 @@ To authenticate requests manually, Basic Auth requires the username and password
 ### Endpoints
 |Endpoint|Description|URL|
 |---|---|---|
-|[getOrders](orders.md)|Returns orders created between the specified `from` and `to` parameters.|`/orders?from={datetime}?to={datetime}`|
-|[updateStock](stock.md)|Updates one or more stock items.|`/stock`|
-|[updateShipments](shipments.md)|Updates one or more shipments.|`/shipments`|
+|[getOrders](orders.md)|Returns orders created between the specified `from` and `to` parameters.|`/v0/orders?from={datetime}?to={datetime}`|
+|[updateStock](stock.md)|Updates one or more stock items.|`/v0/inventory`|
+|[updateShipments](shipments.md)|Updates one or more shipments.|`/v0/shipments`|

@@ -20,7 +20,7 @@ The Fy! Marketplace API for Shipments allows developers to programmatically crea
 ## Paths
 <a name="paths"></a>
 
-### `POST` /shipments
+### `POST` /v0/shipments
 <a name="updateshipments"></a>
 
 Updates one or more shipments.
@@ -30,7 +30,7 @@ Updates one or more shipments.
 |-|-|
 |Operation|`updateShipments`|
 |Method|`POST`|
-|Endpoint|`/shipments`|
+|Endpoint|`/v0/shipments`|
 <br>
 
 #### Parameters
@@ -47,7 +47,7 @@ For example:
 	"data": [{
 		"orderReference": "SO-1234",
 		"items": [{
-			"sku": "SKU-ABC-9000",
+			"sku": "SKU-A",
 			"quantity": 1
 		}],
 		"courier": "U-Ship",
