@@ -2,7 +2,7 @@
 
 ## General
 * Data is consumed and returned as [JSON](https://en.wikipedia.org/wiki/JSON).
-* Date(time)s are consumed and returned using the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
+* Date(time)s are consumed and returned using the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format, specifically `yyyy-MM-ddTHH:mm:ssZ` (UTC with zero offset).
 
 ## Authentication
 Authentication requires the use of a unique supplier API-key over HTTP Basic Auth. In practice this means using your supplier API-key as the username and leaving the password blank.
