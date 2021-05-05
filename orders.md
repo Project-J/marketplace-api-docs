@@ -14,14 +14,15 @@ The Fy! Marketplace API for Orders allows developers to programmatically retriev
 
 ### Operations
 * [getOrders](#getorders)<br>
+* [acknowledgeOrders](#acknowledgeorders)<br>
 
 ----
 
 <a name="paths"></a>
 ## Paths
 
-### `GET` /v0/orders
 <a name="getorders"></a>
+### `GET` /v0/orders
 
 Returns orders created between the specified `from` and `to` parameters.
 
@@ -38,6 +39,7 @@ Returns orders created between the specified `from` and `to` parameters.
 |-|-|-|-|
 |Query|**from** <br>*required*|An ISO-8601 date from which to return orders. The from parameter is the exclusive, lower bound of the query range. Must not be in the future.|string|
 |Query|**to**   <br>*required*|An ISO-8601 date to which to return orders. The to parameter is the inclusive, upper bound of the query range.|string|
+|Query|**acknowledged**   <br>*optional*|Filter by [acknowledged](#acknowledgeorders) status.|boolean|
 <br>
 
 #### Responses
@@ -78,6 +80,47 @@ An example of a successful response from the [getOrders](#getorders) operation:
 |`400`|Missing or invalid parameters.|[GetOrdersResponse](#getordersresponse)|
 |`403`|Access forbidden.|[GetOrdersResponse](#getordersresponse)|
 |`500`|Server error.|[GetOrdersResponse](#getordersresponse)|
+
+---
+
+<a name="acknowledgeorders"></a>
+### `POST` /v0/orders/acknowledge
+
+Marks orders as "acknowledged". This flag can be used to mark orders as retrieved by your system, and can be used as a filter for the getOrders endpoint.
+
+|<!--  -->|<!--  -->|
+|-|-|
+|Operation|`acknowledgeOrders`|
+|Method|`POST`|
+|Endpoint|`/v0/orders/acknowledge`|
+<br>
+
+
+
+#### Parameters
+
+|Type|Name|Description|Schema|
+|-|-|-|-|
+|Body|**body** <br>*required*|The request schema for the acknowledgeOrders operation.|[AcknowledgeOrdersRequest](#acknowledgeordersrequest)|
+<br>
+
+For example:
+
+```json
+{
+	"data": ["an-order-reference", "another-order-reference"]
+}
+```
+
+#### Responses
+
+|Status|Description
+|-|-|
+|`200`|Success
+|`400`|Missing or invalid parameters
+|`403`|Access forbidden
+|`500`|Server error
+
 
 ----
 
@@ -207,4 +250,17 @@ An array containing one or more [OrderLine](#orderline).
 |**country**    <br>*required*|The recipient's country.|string|
 |**company**    <br>*optional*|The recipient's company.|string|
 
+</details>
+
+### Acknowledge Orders Request
+<a name="acknowledgeordersrequest"></a>
+```
+{"data": [<OrderReference>, ...]}
+```
+<details>
+  <summary>View descriptions</summary>
+  
+|Name|Description|Schema|
+|-|-|-|
+|**orderReference**    <br>*optional*|The order reference to mark as acknowledged. Multiple can be passed as an array.|string|
 </details>
