@@ -262,5 +262,5 @@ An array containing one or more [OrderLine](#orderline).
   
 |Name|Description|Schema|
 |-|-|-|
-|**orderReference**    <br>*optional*|The order reference to mark as acknowledged. Multiple can be passed as an array.|string|
+|**orderReference** <br>*optional*|The order reference to mark as acknowledged. Multiple order references can be passed as an array.|string|
 </details>
