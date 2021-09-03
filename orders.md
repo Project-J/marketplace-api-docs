@@ -68,6 +68,16 @@ An example of a successful response from the [getOrders](#getorders) operation:
 			"id": 1234,
 			"sku": "SKU-A",
 			"quantity": 1,
+			"price": {
+				"wholesale": {
+					"cents": 1000,
+					"currency": "GBP"
+				}, 
+				"shipping": {
+					"cents": 100,
+					"currency": "GBP"
+				}
+			}
 		}],
 		"createdAt": "2021-01-01T00:00:00Z"
 	}]
@@ -190,7 +200,8 @@ An array containing one or more [OrderLine](#orderline).
 ```
 {"id"       <number>
  "sku"      <string>
- "quantity" <number>}
+ "quantity" <number>
+ "price"    <Price>}
 ```
 
 <details>
@@ -201,6 +212,44 @@ An array containing one or more [OrderLine](#orderline).
 |**id**         <br>*required*|The identification number of the orderline.|number|
 |**sku**        <br>*required*|The SKU (stock keeping unit) of the orderline item.|string|
 |**quantity**   <br>*required*|The quantity of items in the orderline.|number|
+|**price**.     <br>*required*|The price of the items in the orderline.|Price|	
+
+</details>
+
+### Price
+<a name="price"></a>
+
+```
+{"wholesale" <Cost>
+ "shipping"  <Cost>}
+```
+
+<details>
+  <summary>View descriptions</summary>
+  
+|Name|Description|Schema|
+|-|-|-|
+|**wholesale**  <br>*required*|The total wholesale cost of the items in the orderline.|Cost|
+|**shipping**   <br>*optional*|The total pre-agreed shipping cost of the items in the orderline.|Cost|
+
+</details>
+
+
+### Cost
+<a name="cost"></a>
+
+```
+{"cents"     <number> 
+ "currency"  <string>}
+```
+
+<details>
+  <summary>View descriptions</summary>
+  
+|Name|Description|Schema|
+|-|-|-|
+|**cents**    <br>*required*|The cost amount in the minor unit of the currency (e.g. cents, pence).|number|
+|**currency** <br>*required*|The currency of the cost amount.|string|
 
 </details>
 
