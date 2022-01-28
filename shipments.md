@@ -92,11 +92,12 @@ An example of a successful (`200`) response from the [updateShipments](#updatesh
 <a name="shipmentupdate"></a>
 
 ```
-{"orderReference": <string>
- "items":          <Items>
- "courier":        <string>
- "shippedOn":      <ISO-8601 string>
- "trackingCode":   <string>}
+{"orderReference":         <string>
+ "items":                  <Items>
+ "courier":                <string>
+ "shippedOn":              <ISO-8601 string>
+ "trackingCode":           <string>
+ "supplierOrderReference": <string>}
 ```
 
 <details>
@@ -104,11 +105,12 @@ An example of a successful (`200`) response from the [updateShipments](#updatesh
   
 |Name|Description|Schema|
 |-|-|-|
-|**orderReference** <br>*required*|The reference for a specific Fy! order: an "SO-" prefix followed by a series of numbers.|string|
-|**items**          <br>*required*|The items being shipped.|[Items](#items)|
-|**courier**        <br>*required*|The name of the courier handling the shipment.|string|
-|**shippedOn**      <br>*required*|The (ISO-8601) datetime when the order was shipped.|string|
-|**trackingCode**   <br>*required*|The tracking code associated with the shipment.|string|
+|**orderReference**         <br>*required*|The reference for a specific Fy! purchase order: an "SO-" prefix followed by a series of numbers.|string|
+|**items**                  <br>*required*|The items being shipped.|[Items](#items)|
+|**courier**                <br>*required*|The name of the courier handling the shipment.|string|
+|**shippedOn**              <br>*required*|The (ISO-8601) datetime when the order was shipped.|string|
+|**trackingCode**           <br>*required*|The tracking code associated with the shipment.|string|
+|**supplierOrderReference** <br>*optional*|The order reference used by the supplier in their order management system.|string|
 
 </details>
 
